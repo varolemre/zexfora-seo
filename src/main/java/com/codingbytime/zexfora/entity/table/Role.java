@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "ROLE")
+@Table(name = "ROLES")
 @Getter
 @Setter
 public class Role extends BaseObject {

@@ -37,15 +37,11 @@ public class BaseObject {
     @Column(name = "OPERATION_TYPE", nullable = false)
     private String operationType;
 
-    @Column(name = "ACTIVE", nullable = false)
-    private boolean active;
-
     @PrePersist
     public void onPrePersist() {
         this.setOperationType("SAVE");
         this.setCreateDate(LocalDateTime.now());
         this.setUpdateDate(LocalDateTime.now());
-        this.setActive(true);
     }
 
     @PreUpdate

@@ -1,17 +1,14 @@
 package com.codingbytime.zexfora.entity.table;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,29 +16,23 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "USER")
-public class User extends BaseObject {
+public class Domain extends BaseObject {
 
+    private String url;
 
-    @Column(name = "MAIL", unique = true, nullable = false)
-    private String mail;
-
-
-    @Column(name = "PASSWORD")
-    private String password;
-
-    @OneToMany(mappedBy = "user")
-    private Set<Domain> domains = new HashSet<>();
-
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "USER_ID")
+    private User user;
 
     @ManyToMany(
         cascade = CascadeType.DETACH,
         fetch = FetchType.EAGER
     )
     @JoinTable(
-        name = "USER_ROLES",
+        name = "DOMAIN_KEYWORDS",
         joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
-    private Set<Role> roles;
+    private List<Keyword> keywordList;
+
 }

@@ -31,7 +31,7 @@ public class User extends BaseObject {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private Set<Domain> domains = new HashSet<>();
+    private Set<Website> userWebsites = new HashSet<>();
 
 
     @ManyToMany(

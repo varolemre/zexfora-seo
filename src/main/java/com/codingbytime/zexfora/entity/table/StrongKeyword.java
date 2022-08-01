@@ -14,7 +14,7 @@ import lombok.Setter;
 public class StrongKeyword extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "page_id", referencedColumnName = "id")
+    @JoinColumn(name = "page_id")
     private Page page;
 
     private String strongKeyword;

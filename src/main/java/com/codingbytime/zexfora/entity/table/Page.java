@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Page extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "website_id", referencedColumnName = "id")
+    @JoinColumn(name = "website_id")
     private Website website;
 
     @OneToMany(mappedBy = "page")

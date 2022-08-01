@@ -21,6 +21,6 @@ public class Keyword extends BaseObject{
     private String keyword;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "website_id", referencedColumnName = "id")
+    @JoinColumn(name = "website_id")
     private Website website;
 }

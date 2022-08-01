@@ -33,7 +33,6 @@ public class User extends BaseObject {
     @OneToMany(mappedBy = "user")
     private Set<Website> userWebsites = new HashSet<>();
 
-
     @ManyToMany(
         cascade = CascadeType.DETACH,
         fetch = FetchType.EAGER

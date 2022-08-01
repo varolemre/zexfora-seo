@@ -14,7 +14,7 @@ import lombok.Setter;
 public class CrawledKeywords extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "website_id", referencedColumnName = "id")
+    @JoinColumn(name = "website_id")
     private Website website;
 
     private String keyword;

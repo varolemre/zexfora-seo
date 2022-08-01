@@ -16,7 +16,7 @@ import lombok.Setter;
 public class SeoReport extends BaseObject {
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "website_id", referencedColumnName = "id")
+    @JoinColumn(name = "website_id")
     private Website website;
 
     @Column(name = "H1")

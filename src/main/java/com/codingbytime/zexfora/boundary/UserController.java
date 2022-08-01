@@ -28,7 +28,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("/register")
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public ResponseEntity<CustomResponse<Boolean>> createUser(@Valid @RequestBody UserRegisterDTO registerDTO) {
         User user = userService.createUser(registerDTO);

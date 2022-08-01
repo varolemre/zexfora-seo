@@ -25,21 +25,10 @@ public class UserRegisterDTO {
     @NotBlank(message = "{user.registration.firstname.error}")
     private String firstName;
 
-    @NotBlank(message = "{user.registration.lastname.error}")
-    private String lastName;
-
-    @NotNull(message = "{user.registration.birthdate.error}")
-    private String birthDateStr;
-
-    @NotBlank(message = "{user.registration.gender.error}")
-    private String gender;
-
-
     @NotEmpty(message = "{user.registration.password.error}")
     @Size(min = 6, message = "{user.registration.password.size}")
     @PasswordPattern(message = "{user.registration.password.pattern}")
     private char[] password;
-
 
 }
 

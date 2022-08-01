@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Serp extends BaseObject{
+public class CrawledKeywords extends BaseObject {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "website_id", referencedColumnName = "id")
@@ -19,7 +19,5 @@ public class Serp extends BaseObject{
 
     private String keyword;
 
-    private Long rank;
-
-    private boolean isCrawled;
+    private String url;
 }

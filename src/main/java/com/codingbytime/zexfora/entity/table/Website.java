@@ -34,4 +34,7 @@ public class Website extends BaseObject {
     @OneToMany(mappedBy = "website")
     private Set<CrawledKeywords> crawledKeywords = new HashSet<>();
 
+    @OneToMany(mappedBy = "website")
+    private Set<Keyword> keywords = new HashSet<>();
+
 }

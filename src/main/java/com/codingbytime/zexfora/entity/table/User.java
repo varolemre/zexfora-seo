@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "USER")
+@Table(name = "User")
 public class User extends BaseObject {
 
 
@@ -38,7 +38,7 @@ public class User extends BaseObject {
         fetch = FetchType.EAGER
     )
     @JoinTable(
-        name = "USER_ROLES",
+        name = "User_Roles",
         joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )

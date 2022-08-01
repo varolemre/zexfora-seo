@@ -34,15 +34,12 @@ public class UserRegisterDTO {
     @NotBlank(message = "{user.registration.gender.error}")
     private String gender;
 
-    @NotBlank(message = "{user.registration.phone.number.error}")
-    private String phoneNumber;
 
     @NotEmpty(message = "{user.registration.password.error}")
     @Size(min = 6, message = "{user.registration.password.size}")
     @PasswordPattern(message = "{user.registration.password.pattern}")
     private char[] password;
 
-    private boolean kvkk;
 
 }
 

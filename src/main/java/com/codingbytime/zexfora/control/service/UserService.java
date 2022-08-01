@@ -36,6 +36,7 @@ public class UserService {
         User user = modelMapper.map(userRegisterDTO, User.class);
         user.setPassword(passwordEncoder.encode(String.valueOf(userRegisterDTO.getPassword())));
         user.setRoles(new HashSet<>(List.of(roleRepository.findByName(UserRoleEnum.ROLE_USER.name()))));
+        user.setName(userRegisterDTO.getFirstName());
         User savedUser = userRepository.save(user);
         emailService.sendWelcomeLink(savedUser, LocaleContextHolder.getLocale());
         return savedUser;

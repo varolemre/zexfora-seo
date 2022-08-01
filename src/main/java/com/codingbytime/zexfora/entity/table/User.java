@@ -30,6 +30,8 @@ public class User extends BaseObject {
     @Column(name = "PASSWORD")
     private String password;
 
+    private String name;
+
     @OneToMany(mappedBy = "user")
     private Set<Website> userWebsites = new HashSet<>();
 

@@ -28,4 +28,10 @@ public class Website extends BaseObject {
     @OneToMany(mappedBy = "website")
     private Set<Serp> serps = new HashSet<>();
 
+    @OneToMany(mappedBy = "website")
+    private Set<Page> pages = new HashSet<>();
+
+    @OneToMany(mappedBy = "website")
+    private Set<CrawledKeywords> crawledKeywords = new HashSet<>();
+
 }

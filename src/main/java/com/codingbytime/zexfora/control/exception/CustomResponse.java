@@ -9,12 +9,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.servlet.handler.MatchableHandlerMapping;
+import org.springframework.web.util.UrlPathHelper;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Objects;
 
+import static org.springframework.web.servlet.HandlerMapping.BEST_MATCHING_HANDLER_ATTRIBUTE;
 import static org.springframework.web.servlet.HandlerMapping.LOOKUP_PATH;
 
 @Data
@@ -38,7 +41,7 @@ public class CustomResponse<T> implements Serializable {
         response.setStatus(HttpStatus.OK.value());
         response.setError(null);
         response.setMessage("Success");
-        response.setPath(Objects.requireNonNull(reqAttributes.getAttribute(LOOKUP_PATH, 0)).toString());
+        //response.setPath(Objects.requireNonNull(reqAttributes.getAttribute(LOOKUP_PATH, 0)).toString());
         response.setData(data);
         return ResponseEntity.ok(response);
     }
@@ -72,7 +75,7 @@ public class CustomResponse<T> implements Serializable {
         response.setStatus(HttpStatus.CREATED.value());
         response.setError(null);
         response.setMessage("Success");
-        response.setPath(Objects.requireNonNull(reqAttributes.getAttribute(LOOKUP_PATH, 0)).toString());
+        //response.setPath(Objects.requireNonNull(reqAttributes.getAttribute(BEST_MATCHING_HANDLER_ATTRIBUTE, 0)).toString());
         response.setData(data);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

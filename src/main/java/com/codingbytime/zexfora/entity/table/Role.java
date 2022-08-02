@@ -11,8 +11,11 @@ import java.util.Set;
 @Table(name = "Roles")
 @Getter
 @Setter
-public class Role extends BaseObject {
-
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false)
+    private Long id;
     @Column(name = "NAME")
     private String name;
 

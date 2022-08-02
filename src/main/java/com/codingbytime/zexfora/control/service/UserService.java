@@ -38,6 +38,7 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(String.valueOf(userRegisterDTO.getPassword())));
         user.setRoles(new HashSet<>(List.of(roleRepository.findByName(UserRoleEnum.ROLE_USER.name()))));
         user.setName(userRegisterDTO.getFirstName());
+        user.setActive(true);
         User savedUser = userRepository.save(user);
         emailService.sendWelcomeLink(savedUser, LocaleContextHolder.getLocale());
         return savedUser;

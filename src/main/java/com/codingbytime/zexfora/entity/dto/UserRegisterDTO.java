@@ -19,7 +19,7 @@ import lombok.Setter;
 public class UserRegisterDTO {
     @Email(message = "{user.registration.mail.error}")
     @NotBlank(message = "{user.registration.mail.blank.error}")
-    @UniqueMail(message = "{user.registration.mail.unique.error}")
+    @UniqueMail(message = "1004")
     private String mail;
 
     @NotBlank(message = "{user.registration.firstname.error}")

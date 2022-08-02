@@ -1,0 +1,6 @@
+== Kullanıcı
+- Kullanıcı kayıt olur.
+
+== Site Özellikleri
+- Kayıt edilen web sitelerin, anahtar kelimelerinin Google'daki sıralamasını tutma.
+- 3 tip kullanıcı tipi var.

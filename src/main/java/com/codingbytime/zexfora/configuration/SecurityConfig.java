@@ -36,7 +36,7 @@ public class SecurityConfig {
         "/api/v1/user/resetPassword",
         "/api/v1/payment/response",
         "/api/v1/support/contactUs",
-        "/api/v1/user/register"
+        "/user/register"
         };
     private static final String[] SWAGGER_WHITELIST = {
         "/swagger-ui/**",

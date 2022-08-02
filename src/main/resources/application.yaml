@@ -15,3 +15,11 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: true
+logging:
+  level:
+    org:
+      hibernate: info
+    root: info
+server:
+  servlet:
+    context-path: /api/v1

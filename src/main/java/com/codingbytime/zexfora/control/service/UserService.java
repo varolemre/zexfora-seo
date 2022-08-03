@@ -39,6 +39,7 @@ public class UserService {
         user.setRoles(new HashSet<>(List.of(roleRepository.findByName(UserRoleEnum.ROLE_USER.name()))));
         user.setName(userRegisterDTO.getFirstName());
         user.setActive(true);
+        user.setMembership("ST");
         User savedUser = userRepository.save(user);
         emailService.sendWelcomeLink(savedUser, LocaleContextHolder.getLocale());
         return savedUser;

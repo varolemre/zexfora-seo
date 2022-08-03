@@ -1,5 +1,6 @@
 package com.codingbytime.zexfora.entity.table;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,4 +49,9 @@ public class User extends BaseObject {
 
     @Column(name = "active", nullable = false)
     private boolean active;
+
+    private String membership;
+    private String membershipTime;
+
+    private Date membershipFinishDate;
 }

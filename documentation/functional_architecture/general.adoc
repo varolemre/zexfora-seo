@@ -4,3 +4,5 @@
 == Site Özellikleri
 - Kayıt edilen web sitelerin, anahtar kelimelerinin Google'daki sıralamasını tutma.
 - 3 tip kullanıcı tipi var.
+- 3 tip uyelik paketi var.
+- Üyelikler 1 ay 6 ay ve yıllık olabilir.
